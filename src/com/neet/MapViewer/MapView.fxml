@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neet.MapViewer.MapViewController">
+   <center>
+      <StackPane prefHeight="640.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="MapCanvas" height="640.0" width="640.0" />
+            <ImageView fx:id="Image_ViewMap" fitHeight="640.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+   </center>
+   <right>
+      <Pane fx:id="LeftPane" prefHeight="640.0" prefWidth="219.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="SetAxe" layoutX="46.0" layoutY="471.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Set Axe" onAction="#setPosition"/>
+            <Button fx:id="SetBoat" layoutX="46.0" layoutY="558.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Set Boat" onAction="#setPosition" />
+            <RadioButton fx:id="TopLeft" layoutX="14.0" layoutY="210.0" mnemonicParsing="false" onAction="#radioSelect" text="Top Left">
+               <toggleGroup>
+                  <ToggleGroup fx:id="ZoomRadio" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="TopRight" layoutX="113.0" layoutY="210.0" mnemonicParsing="false" onAction="#radioSelect" text="Top Right" toggleGroup="$ZoomRadio"  />
+            <RadioButton fx:id="BottomLeft" layoutX="14.0" layoutY="256.0" mnemonicParsing="false" onAction="#radioSelect" text="Bottom Left" toggleGroup="$ZoomRadio" />
+            <RadioButton fx:id="BottomRight" layoutX="113.0" layoutY="256.0" mnemonicParsing="false" onAction="#radioSelect" text="Bottom Right" toggleGroup="$ZoomRadio" />
+            <Button fx:id="ZoomIn" layoutX="30.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" text="Zoom-In" />
+            <Button id="ZoomOut" fx:id="ZoomOut" layoutX="115.0" layoutY="131.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="52.0" prefWidth="80.0" text="Zoom-Out" />
+         </children>
+      </Pane>
+   </right>
+</BorderPane>
